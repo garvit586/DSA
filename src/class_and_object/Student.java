@@ -1,6 +1,6 @@
 package class_and_object;
 
 public class Student {
-    int name;
+    String name;
     int rollNo;
 }
