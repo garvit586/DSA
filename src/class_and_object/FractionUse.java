@@ -8,5 +8,20 @@ public class FractionUse {
         f1.setNumerator(10);
         f1.setDenomerator(30);
         f1.print();
+
+        Fraction f2  =  new Fraction(3,4);
+        f1.add(f2);
+        f1.print();
+        f2.print();
+
+        Fraction f3 = new Fraction(4,5);
+        f3.multiply(f2);
+        f3.print();
+        f2.print();
+
+        Fraction f4 = Fraction.add(f1,f3);
+        f1.print();
+        f3.print();
+        f4.print();
     }
 }
