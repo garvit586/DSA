@@ -59,4 +59,10 @@ public class Fraction {
         this.denomerator = this.denomerator * f2.denomerator;
         simplify();
     }
+
+    public void multiply(Fraction f2) {
+        this.numerator = this.numerator * f2.numerator;
+        this.denomerator = this.denomerator * f2.denomerator;
+        simplify();
+    }
 }
