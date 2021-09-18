@@ -53,4 +53,10 @@ public class Fraction {
         numerator = numerator / gcd;
         denomerator = denomerator / gcd;
     }
+
+    public void add(Fraction f2) {
+        this.numerator = this.numerator * f2.denomerator + this.denomerator * f2.numerator;
+        this.denomerator = this.denomerator * f2.denomerator;
+        simplify();
+    }
 }
