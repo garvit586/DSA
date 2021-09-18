@@ -53,6 +53,12 @@ public class Fraction {
         numerator = numerator / gcd;
         denomerator = denomerator / gcd;
     }
+    public static Fraction add(Fraction f1, Fraction f2){
+        int newNum = f1.numerator * f2.denomerator + f1.denomerator* f2.numerator;
+        int newDen = f1.denomerator * f2.denomerator;
+        Fraction f = new Fraction(newNum,newDen);
+        return f;
+    }
 
     public void add(Fraction f2) {
         this.numerator = this.numerator * f2.denomerator + this.denomerator * f2.numerator;
