@@ -1,7 +1,7 @@
 package inheritance;
 
 public class Vehicle {
-    int color;
+    String color;
     int maxSpeed;
     int height;
     int weight;
