@@ -10,5 +10,10 @@ public class Vehicle {
         this.maxSpeed = maxSpeed;
     }
 
-
+    public void print(){
+        System.out.println("vehicle color : " + color);
+        System.out.println("vehicle maxSpeed : " + maxSpeed);
+        System.out.println("vehicle height : " + height);
+        System.out.println("vehicle weight : " + weight);
+    }
 }
