@@ -7,4 +7,9 @@ public class Car extends Vehicle{
 
     int numGears;
 
+    @Override
+    public void print() {
+        super.print();
+        System.out.println("Car Gears : " + numGears );
+    }
 }

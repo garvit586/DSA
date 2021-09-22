@@ -9,6 +9,11 @@ public class VehicleUse {
 
         v.print();
 
+        Car c = new Car(500);
+        c.color = "Black";
+        c.numGears = 5;
+        c.print();
+
 
     }
 }
