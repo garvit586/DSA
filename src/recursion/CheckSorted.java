@@ -23,4 +23,9 @@ public class CheckSorted {
             return false;
         }
     }
+
+    public static void main(String[] args) {
+        int[] input = {5,1,2,3};
+        System.out.println(checkSorted(input));
+    }
 }
