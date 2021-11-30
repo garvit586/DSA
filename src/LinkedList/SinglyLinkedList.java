@@ -66,6 +66,17 @@ public class SinglyLinkedList {
         head = head.next;
     }
 
+    public static void deleteLast(){
+        if (head ==null){
+            System.out.println("LinkedList is empty");
+        }
+        Node temp = head;
+        while(temp.next.next != null){
+            temp = temp.next;
+        }
+        temp.next = null;
+    }
+
     public static void main(String[] args) {
         Node newNode0 = new Node(10);
         Node newNode1 = new Node(20);
@@ -96,6 +107,9 @@ public class SinglyLinkedList {
         print();
         System.out.println();
         deleteFirst();
+        print();
+        System.out.println();
+        deleteLast();
         print();
 
     }
