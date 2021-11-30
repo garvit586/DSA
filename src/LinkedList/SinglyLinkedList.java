@@ -59,6 +59,13 @@ public class SinglyLinkedList {
         }
     }
 
+    public static void deleteFirst(){
+        if (head == null){
+            System.out.println("LinkedList is Empty");
+        }
+        head = head.next;
+    }
+
     public static void main(String[] args) {
         Node newNode0 = new Node(10);
         Node newNode1 = new Node(20);
@@ -86,6 +93,9 @@ public class SinglyLinkedList {
         insertAtPosition(newNode8,6);
         insertAtPosition(newNode9,7);
 
+        print();
+        System.out.println();
+        deleteFirst();
         print();
 
     }
