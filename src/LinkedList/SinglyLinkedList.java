@@ -23,4 +23,31 @@ public class SinglyLinkedList {
         }
         temp.next = newNode;
     }
+
+    public static void insertAtPosition(Node newNode, int position){
+        if (position == 0){
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+
+        if (position == 1){
+            newNode.next = head.next;
+            head.next = newNode;
+            return;
+        }
+
+        Node temp = head;
+        int i = 0;
+        while(i < position-1){
+            temp = temp.next;
+            i++;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
+
+
+
+
 }
