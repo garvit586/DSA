@@ -47,6 +47,17 @@ public class SinglyLinkedList {
         temp.next = newNode;
     }
 
+    public static void print(){
+        if (head == null){
+            System.out.println("LinkedList is empty");
+        }
+
+        Node temp = head;
+        while(temp != null){
+            System.out.print(temp.data + "->");
+            temp = temp.next;
+        }
+    }
 
 
 
