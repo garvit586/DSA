@@ -59,6 +59,38 @@ public class SinglyLinkedList {
         }
     }
 
+    public static void main(String[] args) {
+        Node newNode0 = new Node(10);
+        Node newNode1 = new Node(20);
+        Node newNode2 = new Node(30);
+        Node newNode3 = new Node(40);
+        Node newNode4 = new Node(50);
+        Node newNode5 = new Node(60);
+        Node newNode6 = new Node(70);
+        Node newNode7 = new Node(25);
+        Node newNode8 = new Node(55);
+        Node newNode9 = new Node(65);
+
+        insertFirst(newNode0);
+        insertFirst(newNode1);
+        insertFirst(newNode2);
+        insertFirst(newNode3);
+        insertLast(newNode4);
+        insertLast(newNode5);
+        insertLast(newNode6);
+
+        print();
+        System.out.println();
+
+        insertAtPosition(newNode7,4);
+        insertAtPosition(newNode8,6);
+        insertAtPosition(newNode9,7);
+
+        print();
+
+    }
+
+
 
 
 }
