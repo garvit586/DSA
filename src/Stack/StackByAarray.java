@@ -73,7 +73,7 @@ public class StackByAarray {
         stack.isEmpty();
         stack.isFull();
         stack.pop();
-        stack.isEmpty();
+        stack.peek();
         stack.deleteStack();
     }
 }
