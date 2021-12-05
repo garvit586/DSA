@@ -31,4 +31,13 @@ public class StackByAarray {
         }
         arr[top + 1] = data;
     }
+
+    public void peek(){
+        if (isEmpty()){
+            System.out.println("Stack Underflow");
+        }
+        else {
+            System.out.println(top);
+        }
+    }
 }
