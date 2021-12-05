@@ -38,4 +38,13 @@ public class StackByLinkedList {
             top = top.next;
         }
     }
+
+    public void peek(){
+        if(isEmpty()){
+            System.out.println("Stack UnderFlow");
+        }
+        else{
+            System.out.println(top.data);
+        }
+    }
 }
