@@ -1,11 +1,19 @@
 package Stack;
 
-import LinkedList.Node;
-
 public class StackByLinkedList {
-    Node top;
+     ListNode top;
 
     public StackByLinkedList(){
         top = null;
+    }
+
+    public Boolean isEmpty(){
+        if(top == null){
+            System.out.println("Stack is empty");
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
