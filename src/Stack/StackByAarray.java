@@ -55,7 +55,10 @@ public class StackByAarray {
         }
     }
 
-
+    public void deleteStack(){
+        arr = null;
+        System.out.println("The Stack is deleted");
+    }
 
     public static void main(String[] args) {
         StackByAarray stack = new StackByAarray(5);
@@ -71,5 +74,6 @@ public class StackByAarray {
         stack.isFull();
         stack.pop();
         stack.isEmpty();
+        stack.deleteStack();
     }
 }
