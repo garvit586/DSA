@@ -24,4 +24,11 @@ public class StackByAarray {
         }
         return false;
     }
+
+    public void push(int data){
+        if (isFull()){
+            System.out.println("Stack Overflow");
+        }
+        arr[top + 1] = data;
+    }
 }
