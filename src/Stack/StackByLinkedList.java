@@ -16,4 +16,16 @@ public class StackByLinkedList {
             return false;
         }
     }
+
+    public void push(ListNode newNode){
+        if(isEmpty()){
+            top = newNode;
+            System.out.println("The Node is pushed");
+        }
+        else{
+            newNode.next = top;
+            top = newNode;
+        }
+    }
+
 }
