@@ -28,4 +28,14 @@ public class StackByLinkedList {
         }
     }
 
+
+    public void pop(){
+        if(isEmpty()){
+            System.out.println("Stack Underflow");
+        }
+        else{
+            System.out.println("The poped node is " + top.data);
+            top = top.next;
+        }
+    }
 }
