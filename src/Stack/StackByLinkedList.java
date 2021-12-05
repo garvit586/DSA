@@ -47,4 +47,27 @@ public class StackByLinkedList {
             System.out.println(top.data);
         }
     }
+
+    public static void main(String[] args) {
+        StackByLinkedList stack = new StackByLinkedList();
+        ListNode newNode1 = new ListNode(5);
+        ListNode newNode2 = new ListNode(10);
+        ListNode newNode3 = new ListNode(15);
+        ListNode newNode4 = new ListNode(20);
+        ListNode newNode5 = new ListNode(25);
+        stack.isEmpty();
+        stack.push(newNode1);
+        stack.push(newNode2);
+        stack.push(newNode3);
+        stack.push(newNode4);
+        stack.push(newNode5);
+        stack.peek();
+        stack.isEmpty();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.peek();
+    }
 }
