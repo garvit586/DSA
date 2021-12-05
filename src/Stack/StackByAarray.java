@@ -16,4 +16,12 @@ public class StackByAarray {
         }
         return false;
     }
+
+    public Boolean isFull(){
+        if (top == arr.length-1){
+            System.out.println("Stack is Full");
+            return true;
+        }
+        return false;
+    }
 }
