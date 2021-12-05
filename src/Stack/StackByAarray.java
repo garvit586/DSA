@@ -29,15 +29,28 @@ public class StackByAarray {
         if (isFull()){
             System.out.println("Stack Overflow");
         }
-        arr[top + 1] = data;
+        else {
+            top++;
+            arr[top] = data;
+        }
     }
 
     public void peek(){
         if (isEmpty()){
-            System.out.println("Stack Underflow");
+            System.out.println("Stack is Empty");
         }
         else {
-            System.out.println(top);
+            System.out.println(arr[top]);
         }
+    }
+
+    public static void main(String[] args) {
+        StackByAarray stack = new StackByAarray(5);
+        stack.isEmpty();
+        stack.isFull();
+        stack.push(5);
+        stack.peek();
+        stack.isEmpty();
+        stack.isFull();
     }
 }
