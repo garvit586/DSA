@@ -9,4 +9,11 @@ public class StackByAarray {
         top = -1;
     }
 
+    public Boolean isEmpty(){
+        if (top == -1){
+            System.out.println("Stack is Empty");
+            return true;
+        }
+        return false;
+    }
 }
