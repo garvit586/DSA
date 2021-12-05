@@ -5,5 +5,7 @@ import LinkedList.Node;
 public class StackByLinkedList {
     Node top;
 
-
+    public StackByLinkedList(){
+        top = null;
+    }
 }
