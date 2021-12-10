@@ -35,4 +35,17 @@ public class QueueByLinkedList {
             front = front.next;
         }
     }
+
+    public void print(){
+        if (isEmpty()){
+            System.out.println("uderflow");
+        }
+        else {
+            Node temp = front;
+            while (temp != null){
+                System.out.println(temp.data);
+                temp = temp.next;
+            }
+        }
+    }
 }
