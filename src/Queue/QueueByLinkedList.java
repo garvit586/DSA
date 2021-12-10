@@ -9,5 +9,10 @@ public class QueueByLinkedList {
         rear = null;
     }
 
-
+    public boolean isFull(){
+        if (front == null){
+            return true;
+        }
+        return false;
+    }
 }
