@@ -39,4 +39,17 @@ public class QueueByArray {
             arr[rear] = value;
         }
     }
+
+    public void dequeue(){
+        if(isEmpty()){
+            System.out.println("UnderFlow");
+        }
+        else{
+            System.out.println("The deleted value is " + arr[front]);
+            front++;
+        }
+        if (front > rear){
+            front = rear = -1;
+        }
+    }
 }
