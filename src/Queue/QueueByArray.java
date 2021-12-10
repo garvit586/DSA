@@ -11,5 +11,10 @@ public class QueueByArray {
         rear = -1;
     }
 
-
+    public boolean isEmpty(){
+        if(front == -1){
+            return true;
+        }
+        return false;
+    }
 }
