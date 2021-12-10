@@ -25,5 +25,18 @@ public class QueueByArray {
         return false;
     }
 
-
+    public void enqueue(int value){
+        if (isFull()){
+            System.out.println("overflow");
+        }
+        else if(isEmpty()){
+            front ++;
+            rear ++;
+            arr[rear] = value;
+        }
+        else{
+            rear ++;
+            arr[rear] = value;
+        }
+    }
 }
