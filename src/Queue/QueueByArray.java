@@ -52,4 +52,32 @@ public class QueueByArray {
             front = rear = -1;
         }
     }
+
+    public void print(){
+        if (front == -1){
+            System.out.println("underflow");
+        }
+        else {
+            int temp = front;
+            while (temp <= rear) {
+                System.out.print(arr[temp] + " ");
+                temp++;
+            }
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        QueueByArray queue = new QueueByArray(5);
+        queue.print();
+        queue.enqueue(01);
+        queue.enqueue(02);
+        queue.enqueue(03);
+        queue.enqueue(04);
+        queue.enqueue(05);
+        queue.print();
+        queue.dequeue();
+        queue.dequeue();
+        queue.print();
+    }
 }
