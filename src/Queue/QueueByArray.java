@@ -17,4 +17,13 @@ public class QueueByArray {
         }
         return false;
     }
+
+    public boolean isFull(){
+        if (rear == arr.length - 1){
+            return true;
+        }
+        return false;
+    }
+
+
 }
