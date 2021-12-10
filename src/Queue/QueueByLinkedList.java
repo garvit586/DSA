@@ -26,5 +26,13 @@ public class QueueByLinkedList {
         }
     }
 
-
+    public void dequeue(){
+        if (isEmpty()){
+            System.out.println("underflow");
+        }
+        else{
+            System.out.println(front.data);
+            front = front.next;
+        }
+    }
 }
