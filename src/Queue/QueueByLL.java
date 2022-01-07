@@ -8,4 +8,11 @@ public class QueueByLL<T> {
         front =  null;
         rear = null;
     }
+
+    public boolean isEmpty(){
+        if (front == null){
+            return true;
+        }
+        return false;
+    }
 }
