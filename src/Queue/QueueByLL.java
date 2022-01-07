@@ -1,5 +1,8 @@
 package Queue;
 
-public class QueueByLL {
+public class QueueByLL<T> {
+    public T front;
+    public T rear;
+
 
 }
