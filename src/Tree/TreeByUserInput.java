@@ -17,6 +17,16 @@ public class TreeByUserInput {
         }
         return root;
     }
+
+    public static void print(TreeNode<Integer> root){
+        String s = root.data + ":";
+        for (int i = 0; i < root.child.size(); i++) {
+            s = s + root.child.get(i);
+        }
+        for (int i = 0; i < root.child.size(); i++) {
+            print(root.child.get(i));
+        }
+    }
     public static void main(String[] args) {
 
     }
