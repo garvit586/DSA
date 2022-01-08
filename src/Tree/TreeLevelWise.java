@@ -36,8 +36,20 @@ public class TreeLevelWise {
         }
     }
 
+    public static int numberOfNodes(TreeNode<Integer> root){
+        if(root == null){
+            return 0;
+        }
+        int count = 1;
+        for (int i = 0; i < root.child.size(); i++) {
+            count = count + numberOfNodes(root.child.get(i));
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         TreeNode<Integer> root = takeInput();
         print(root);
+        System.out.println(numberOfNodes(root));
     }
 }
