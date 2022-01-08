@@ -1,18 +1,18 @@
 package Queue;
 
 public class QueueByLL<T> {
-    public T front;
-    public T rear;
+    private Node2<T> front;
+    private Node2<T> rear;
+    private int size;
 
     public QueueByLL(){
         front =  null;
         rear = null;
+        size = 0;
     }
 
-    public boolean isEmpty(){
-        if (front == null){
-            return true;
-        }
-        return false;
+    int size(){
+        return size;
     }
+
 }

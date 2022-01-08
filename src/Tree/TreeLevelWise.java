@@ -1,16 +1,14 @@
 package Tree;
 
-import Queue.QueueByLinkedList;
+import Queue.QueueByLL;
 
-import java.util.Queue;
 import java.util.Scanner;
-import java.util.Set;
 
 public class TreeLevelWise {
     public static TreeNode<Integer> takeInput(){
         Scanner s  = new Scanner(System.in);
         System.out.println("Enter root data");
         int rootData = s.nextInt();
-
+        QueueByLL<TreeNode<Integer>> q= new QueueByLL<>();
     }
 }
