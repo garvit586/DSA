@@ -27,8 +27,9 @@ public class QueueByLL<T> {
         }
         else{
             rear.next = newNode;
-            size++;
+            rear = newNode;
         }
+        size++;
     }
 
     public T dequeue(){
@@ -40,6 +41,7 @@ public class QueueByLL<T> {
         if(size == 1){
             rear = null;
         }
+        size--;
         return temp;
     }
 }
