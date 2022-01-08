@@ -47,9 +47,24 @@ public class TreeLevelWise {
         return count;
     }
 
+    public static int largest(TreeNode<Integer> root){
+        if(root == null){
+            return Integer.MIN_VALUE;
+        }
+        int ans = root.data;
+        for (int i = 0; i < root.child.size(); i++) {
+            int childLargest = root.child.get(i).data;
+            if(childLargest  > ans){
+                ans = childLargest;
+            }
+        }
+        return  ans;
+    }
+
     public static void main(String[] args) {
         TreeNode<Integer> root = takeInput();
         print(root);
         System.out.println(numberOfNodes(root));
+        System.out.println(largest(root));
     }
 }
