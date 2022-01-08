@@ -15,4 +15,9 @@ public class QueueByLL<T> {
         return size;
     }
 
+    boolean isEmpty(){
+        return size==0;
+    }
+
+
 }
