@@ -88,6 +88,17 @@ public class TreeLevelWise {
         return leaves;
     }
 
+    public static int height(TreeNode<Integer> root){
+        int h = 0;
+        for (int i = 0; i < root.child.size(); i++) {
+            int ch = height(root.child.get(i));
+            h= Math.max(h,ch);
+        }
+
+        h=h+1;
+        return h;
+    }
+
     public static void main(String[] args) {
         TreeNode<Integer> root = takeInput();
         print(root);
@@ -99,5 +110,7 @@ public class TreeLevelWise {
         printK(root , 2);
         System.out.println();
         System.out.println(countLeaves(root));
+        System.out.println();
+        System.out.println(height(root));
     }
 }
