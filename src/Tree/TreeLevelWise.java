@@ -109,6 +109,17 @@ public class TreeLevelWise {
         return h;
     }
 
+    public static void postOrder(TreeNode<Integer> root){
+        if(root == null){
+            return;
+        }
+        for (int i = 0; i < root.child.size(); i++) {
+            postOrder(root.child.get(i));
+        }
+        System.out.print(root.data + " ");
+
+    }
+
     public static void main(String[] args) {
         TreeNode<Integer> root = takeInput();
         print(root);
@@ -123,5 +134,7 @@ public class TreeLevelWise {
         System.out.println();
         System.out.println(height(root));
         preOrder(root);
+        System.out.println();
+        postOrder(root);
     }
 }
