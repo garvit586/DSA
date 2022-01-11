@@ -25,6 +25,16 @@ public class TreeLevelWise {
     return root;
     }
 
+    public static void preOrder(TreeNode<Integer> root){
+        if(root == null ){
+            return;
+        }
+        System.out.print(root.data + " ");
+        for (int i = 0; i < root.child.size(); i++) {
+            preOrder(root.child.get(i));
+        }
+    }
+
     public static void print(TreeNode<Integer> root){
         String s = root.data + ":";
         for (int i = 0; i < root.child.size(); i++) {
@@ -112,5 +122,6 @@ public class TreeLevelWise {
         System.out.println(countLeaves(root));
         System.out.println();
         System.out.println(height(root));
+        preOrder(root);
     }
 }
