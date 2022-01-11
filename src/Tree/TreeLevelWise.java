@@ -53,7 +53,7 @@ public class TreeLevelWise {
         }
         int ans = root.data;
         for (int i = 0; i < root.child.size(); i++) {
-            int childLargest = root.child.get(i).data;
+            int childLargest = largest(root.child.get(i));
             if(childLargest  > ans){
                 ans = childLargest;
             }
