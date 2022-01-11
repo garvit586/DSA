@@ -61,10 +61,24 @@ public class TreeLevelWise {
         return  ans;
     }
 
+    public static void printK(TreeNode<Integer> root , int k){
+        if(k<0){
+            return;
+        }
+        if(k==0){
+            System.out.println(root.data);
+            return;
+        }
+        for (int i = 0; i < root.child.size(); i++) {
+            printK(root.child.get(i) , k-1);
+        }
+    }
+
     public static void main(String[] args) {
         TreeNode<Integer> root = takeInput();
         print(root);
         System.out.println(numberOfNodes(root));
         System.out.println(largest(root));
+        printK(root , 2);
     }
 }
