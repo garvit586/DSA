@@ -1,5 +1,6 @@
 package Tree;
 
+import java.util.Queue;
 import java.util.Scanner;
 
 public class TreeLevelWise {
@@ -23,6 +24,26 @@ public class TreeLevelWise {
             }
         }
     return root;
+    }
+
+    public static void printLevelWise(TreeNode<Integer> root){
+        if(root == null){
+            return;
+        }
+        QueueByLL<TreeNode> q = new QueueByLL<>();
+        q.enqueue(root);
+        while(!q.isEmpty()){
+            int n = q.size();
+            while(n >0) {
+                TreeNode<Integer> p = q.dequeue();
+                System.out.print(p.data + " ");
+                for (int i = 0; i < p.child.size(); i++) {
+                    q.enqueue(p.child.get(i));
+                }
+                n--;
+            }
+            System.out.println();
+        }
     }
 
     public static void preOrder(TreeNode<Integer> root){
@@ -136,5 +157,7 @@ public class TreeLevelWise {
         preOrder(root);
         System.out.println();
         postOrder(root);
+        System.out.println();
+        printLevelWise(root);
     }
 }
