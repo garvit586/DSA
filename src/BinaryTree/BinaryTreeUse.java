@@ -14,4 +14,20 @@ public class BinaryTreeUse {
         root.right = takeInput(s);
         return root;
     }
+
+    public static void print(BinaryTreeNode<Integer> root){
+        if(root == null){
+            return;
+        }
+        String toBePrinted = root.data + "";
+        if (root.left != null){
+            toBePrinted += "L:" + root.left.data + ",";
+        }
+        if (root.right != null){
+            toBePrinted += "R:" + root.right.data + ",";
+        }
+        System.out.println(toBePrinted);
+        print(root.left);
+        print(root.right);
+    }
 }
