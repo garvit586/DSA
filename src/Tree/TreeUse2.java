@@ -3,7 +3,7 @@ package Tree;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class TreeLevelWise {
+public class TreeUse2 {
     public static TreeNode<Integer> takeInput(){
         Scanner s  = new Scanner(System.in);
         System.out.println("Enter root data");
