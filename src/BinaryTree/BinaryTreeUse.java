@@ -31,9 +31,39 @@ public class BinaryTreeUse {
         print(root.right);
     }
 
+    public static BinaryTreeNode<Integer> takeInputLevelWise(){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the root");
+        int rootData = s.nextInt();
+        if(rootData == -1){
+            return null;
+        }
+        QueueByLL<BinaryTreeNode<Integer>> pendingNodes = new QueueByLL<>();
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(rootData);
+        pendingNodes.enqueue(root);
+        while(!pendingNodes.isEmpty()){
+            BinaryTreeNode<Integer> frontNode = pendingNodes.dequeue();
+            System.out.println("Enter the left child of " + frontNode.data);
+            int leftChildData = s.nextInt();
+            if (leftChildData !=-1) {
+                BinaryTreeNode<Integer> leftChild = new BinaryTreeNode<>(leftChildData);
+                frontNode.left = leftChild;
+                pendingNodes.enqueue(leftChild);
+            }
+            System.out.println("Enter the right child of " + frontNode.data);
+            int rightChildData = s.nextInt();
+            if(rightChildData != -1) {
+                BinaryTreeNode<Integer> rightChild = new BinaryTreeNode<>(rightChildData);
+                frontNode.right = rightChild;
+                pendingNodes.enqueue(rightChild);
+            }
+        }
+        return root;
+    }
+
     public static void main(String[] args) {
-        Scanner s  = new Scanner(System.in);
-        BinaryTreeNode<Integer> root = takeInput(s);
+//        Scanner s  = new Scanner(System.in);
+        BinaryTreeNode<Integer> root = takeInputLevelWise();
         print(root);
     }
 }
