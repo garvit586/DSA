@@ -61,9 +61,32 @@ public class BinaryTreeUse {
         return root;
     }
 
+    public static void printLevelWise(BinaryTreeNode<Integer> root){
+        if(root == null){
+            return ;
+        }
+        QueueByLL<BinaryTreeNode> q = new QueueByLL<>();
+        q.enqueue(root);
+        while(!q.isEmpty()){
+            int size = q.size();
+            while(size > 0){
+                BinaryTreeNode<Integer> p = q.dequeue();
+                System.out.print(p.data + " ");
+                if(p.left != null){
+                    q.enqueue(p.left);
+                }
+                if(p.right != null){
+                    q.enqueue(p.right);
+                }
+                size--;
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
 //        Scanner s  = new Scanner(System.in);
         BinaryTreeNode<Integer> root = takeInputLevelWise();
-        print(root);
+        printLevelWise(root);
     }
 }
