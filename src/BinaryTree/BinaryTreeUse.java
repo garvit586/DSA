@@ -84,9 +84,20 @@ public class BinaryTreeUse {
         }
     }
 
+    public static int countNodes(BinaryTreeNode<Integer> root){
+        if(root == null){
+            return 0;
+        }
+        int count = 1;
+        count += countNodes(root.left);
+        count += countNodes(root.right);
+        return count;
+    }
+
     public static void main(String[] args) {
 //        Scanner s  = new Scanner(System.in);
         BinaryTreeNode<Integer> root = takeInputLevelWise();
         printLevelWise(root);
+        System.out.println(countNodes(root));
     }
 }
