@@ -151,6 +151,15 @@ public class BinaryTreeUse {
         PreOrder(root.right);
     }
 
+    public static void PostOrder(BinaryTreeNode<Integer> root){
+        if(root == null){
+            return;
+        }
+        PostOrder(root.left);
+        PostOrder(root.right);
+        System.out.print(root.data + " ");
+    }
+
     public static void main(String[] args) {
 //        Scanner s  = new Scanner(System.in);
         BinaryTreeNode<Integer> root = takeInputLevelWise();
@@ -161,5 +170,10 @@ public class BinaryTreeUse {
         System.out.println("=======================");
         System.out.println("height : " + heightDiameter(root).first);
         System.out.println("Diameter : " + heightDiameter(root).second);
+        InOrder(root);
+        System.out.println();
+        PreOrder(root);
+        System.out.println();
+        PostOrder(root);
     }
 }
