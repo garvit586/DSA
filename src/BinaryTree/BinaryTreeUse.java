@@ -138,8 +138,17 @@ public class BinaryTreeUse {
             return;
         }
         InOrder(root.left);
-        System.out.println(root.data + " ");
+        System.out.print(root.data + " ");
         InOrder(root.right);
+    }
+
+    public static void PreOrder(BinaryTreeNode<Integer> root){
+        if(root == null){
+            return;
+        }
+        System.out.print(root.data + " ");
+        PreOrder(root.left);
+        PreOrder(root.right);
     }
 
     public static void main(String[] args) {
