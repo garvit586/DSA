@@ -103,11 +103,22 @@ public class BinaryTreeUse {
         return 1 + Math.max(lh , rh);
     }
 
+    public static int diameter(BinaryTreeNode<Integer> root){
+        if(root == null){
+            return 0;
+        }
+        int option1 = height(root.left) + height(root.right);
+        int option2 = diameter(root.left);
+        int option3 = diameter(root.right);
+        return Math.max(option1 , Math.max(option2,option3));
+    }
+
     public static void main(String[] args) {
 //        Scanner s  = new Scanner(System.in);
         BinaryTreeNode<Integer> root = takeInputLevelWise();
         printLevelWise(root);
         System.out.println(countNodes(root));
         System.out.println(height(root));
+        System.out.println(diameter(root));
     }
 }
