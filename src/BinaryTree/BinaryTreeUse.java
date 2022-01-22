@@ -94,10 +94,20 @@ public class BinaryTreeUse {
         return count;
     }
 
+    public static int height(BinaryTreeNode<Integer> root){
+        if(root == null){
+            return 0;
+        }
+        int lh = height(root.left);
+        int rh = height(root.right);
+        return 1 + Math.max(lh , rh);
+    }
+
     public static void main(String[] args) {
 //        Scanner s  = new Scanner(System.in);
         BinaryTreeNode<Integer> root = takeInputLevelWise();
         printLevelWise(root);
         System.out.println(countNodes(root));
+        System.out.println(height(root));
     }
 }
