@@ -160,6 +160,10 @@ public class BinaryTreeUse {
         System.out.print(root.data + " ");
     }
 
+    public static BinaryTreeNode<Integer> buildTree(int[] in, int[] pre){
+        return buildTreeHelper(in,pre,0,in.length-1,0,pre.length-1);
+    }
+
     public static void main(String[] args) {
 //        Scanner s  = new Scanner(System.in);
         BinaryTreeNode<Integer> root = takeInputLevelWise();
