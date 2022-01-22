@@ -133,8 +133,8 @@ public class BinaryTreeUse {
         return output;
     }
 
-    public static void InOrder(BinaryTreeNode<Integer> root){
-        if(root == null){
+    public static void InOrder(BinaryTreeNode<Integer> root) {
+        if (root == null) {
             return;
         }
         InOrder(root.left);
@@ -142,8 +142,8 @@ public class BinaryTreeUse {
         InOrder(root.right);
     }
 
-    public static void PreOrder(BinaryTreeNode<Integer> root){
-        if(root == null){
+    public static void PreOrder(BinaryTreeNode<Integer> root) {
+        if (root == null) {
             return;
         }
         System.out.print(root.data + " ");
@@ -151,8 +151,8 @@ public class BinaryTreeUse {
         PreOrder(root.right);
     }
 
-    public static void PostOrder(BinaryTreeNode<Integer> root){
-        if(root == null){
+    public static void PostOrder(BinaryTreeNode<Integer> root) {
+        if (root == null) {
             return;
         }
         PostOrder(root.left);
@@ -161,36 +161,36 @@ public class BinaryTreeUse {
     }
 
     public static BinaryTreeNode<Integer> buildTreeHelper(int[] in, int[] pre, int inS, int inE, int preS, int preE) {
-        if(inS > inE){
+        if (inS > inE) {
             return null;
         }
         int rootData = pre[preS];
         BinaryTreeNode<Integer> root = new BinaryTreeNode<>(rootData);
         int rootIndex = -1;
         for (int i = inS; i <= inE; i++) {
-            if(in[i] == rootData){
+            if (in[i] == rootData) {
                 rootIndex = i;
                 break;
             }
         }
-        if(rootIndex == -1){
+        if (rootIndex == -1) {
             return null;
         }
         int leftInS = inS;
-        int leftInE = rootIndex-1;
+        int leftInE = rootIndex - 1;
         int leftPreS = preS + 1;
         int leftPreE = leftInE - leftInS + leftPreS;
         int rightInS = rootIndex + 1;
         int rightInE = inE;
-        int rightPreS = leftPreE+1;
+        int rightPreS = leftPreE + 1;
         int rightPreE = preE;
-        root.left = buildTreeHelper(in ,pre, leftInS,leftInE,leftPreS,leftPreE);
-        root.right = buildTreeHelper(in ,pre,rightInS,rightInE,rightPreS,rightPreE);
+        root.left = buildTreeHelper(in, pre, leftInS, leftInE, leftPreS, leftPreE);
+        root.right = buildTreeHelper(in, pre, rightInS, rightInE, rightPreS, rightPreE);
         return root;
     }
 
-    public static BinaryTreeNode<Integer> buildTree(int[] in, int[] pre){
-        return buildTreeHelper(in,pre,0,in.length-1,0,pre.length-1);
+    public static BinaryTreeNode<Integer> buildTree(int[] in, int[] pre) {
+        return buildTreeHelper(in, pre, 0, in.length - 1, 0, pre.length - 1);
     }
 
     public static void main(String[] args) {
@@ -208,9 +208,9 @@ public class BinaryTreeUse {
         PreOrder(root);
         System.out.println();
         PostOrder(root);
-        int[] in = {4,2,5,1,6,3,7};
-        int[] pre = {1,2,4,5,3,6,7};
-        BinaryTreeNode<Integer> root2 = buildTree(in,pre);
+        int[] in = {4, 2, 5, 1, 6, 3, 7};
+        int[] pre = {1, 2, 4, 5, 3, 6, 7};
+        BinaryTreeNode<Integer> root2 = buildTree(in, pre);
         System.out.println();
         System.out.println("==========================");
         printLevelWise(root2);
