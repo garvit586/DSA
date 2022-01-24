@@ -33,4 +33,16 @@ public class BST {
         print(root.right);
     }
 
+    public static void main(String[] args) {
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(25);
+        insert(root, 10);
+        insert(root, 20);
+        insert(root, 30);
+        insert(root, 40);
+        insert(root, 5);
+        insert(root, 8);
+        insert(root, 2);
+        System.out.println();
+        print(root);
+    }
 }
