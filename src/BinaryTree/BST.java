@@ -58,5 +58,7 @@ public class BST {
         insert(root, 2);
         System.out.println();
         print(root);
+        System.out.println(search(root,40));
+        System.out.println(search(root,100));
     }
 }
