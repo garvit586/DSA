@@ -47,17 +47,17 @@ public class BST {
         }
     }
 
-    public static void elementsBetweenk1k2O(BinaryTreeNode<Integer> root , int k1, int k2){
-        if (root == null){
+    public static void elementsBetweenk1k2O(BinaryTreeNode<Integer> root, int k1, int k2) {
+        if (root == null) {
             return;
         }
-        if(k1 < root.data){
-            elementsBetweenk1k2O(root.left,k1,k2);
+        if (k1 < root.data) {
+            elementsBetweenk1k2O(root.left, k1, k2);
         }
-        if(root.data >= k1 && root.data <= k2){
+        if (root.data >= k1 && root.data <= k2) {
             System.out.print(root.data + " ");
         }
-        elementsBetweenk1k2O(root.right,k1,k2);
+        elementsBetweenk1k2O(root.right, k1, k2);
     }
 
     public static void main(String[] args) {
@@ -73,6 +73,6 @@ public class BST {
         print(root);
         System.out.println(search(root, 40));
         System.out.println(search(root, 100));
-        elementsBetweenk1k2O(root,2,10);
+        elementsBetweenk1k2O(root, 2, 10);
     }
 }
