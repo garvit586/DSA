@@ -73,5 +73,6 @@ public class BST {
         print(root);
         System.out.println(search(root, 40));
         System.out.println(search(root, 100));
+        elementsBetweenk1k2O(root,2,10);
     }
 }
