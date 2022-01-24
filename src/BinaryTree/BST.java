@@ -33,6 +33,20 @@ public class BST {
         print(root.right);
     }
 
+    public static boolean search(BinaryTreeNode<Integer> root, int value){
+        if(root == null){
+            return false;
+        }
+        if(root.data == value){
+            return true;
+        }
+        if(value < root.data){
+            return search(root.left, value);
+        }
+        else {
+            return search(root.right, value);
+        }
+    }
     public static void main(String[] args) {
         BinaryTreeNode<Integer> root = new BinaryTreeNode<>(25);
         insert(root, 10);
