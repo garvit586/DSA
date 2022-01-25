@@ -60,6 +60,13 @@ public class BST {
         elementsBetweenk1k2O(root.right, k1, k2);
     }
 
+    public static int minimum(BinaryTreeNode<Integer> root){
+        if(root == null){
+            return  Integer.MAX_VALUE;
+        }
+        return Math.min(root.data , Math.min(minimum(root.left),minimum(root.right)));
+    }
+
     public static boolean isBst(BinaryTreeNode<Integer> root){
         if(root == null){
             return true;
