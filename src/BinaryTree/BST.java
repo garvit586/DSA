@@ -67,6 +67,13 @@ public class BST {
         return Math.min(root.data , Math.min(minimum(root.left),minimum(root.right)));
     }
 
+    public static int maximum(BinaryTreeNode<Integer> root){
+        if(root == null){
+            return  Integer.MIN_VALUE;
+        }
+        return Math.max(root.data , Math.max(maximum(root.left),maximum(root.right)));
+    }
+
     public static boolean isBst(BinaryTreeNode<Integer> root){
         if(root == null){
             return true;
