@@ -60,6 +60,24 @@ public class BST {
         elementsBetweenk1k2O(root.right, k1, k2);
     }
 
+    public static boolean isBst(BinaryTreeNode<Integer> root){
+        if(root == null){
+            return true;
+        }
+        int leftMax= maximum(root.left);
+        int rightMin = minimum(root.right);
+
+        if(root.data < leftMax || root.data > rightMin){
+            return false;
+        }
+        if(isBst(root.left) && isBst(root.right)){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
         BinaryTreeNode<Integer> root = new BinaryTreeNode<>(25);
         insert(root, 10);
