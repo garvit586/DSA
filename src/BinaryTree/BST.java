@@ -127,6 +127,17 @@ public class BST {
         return isLeftOk && isRightOk;
     }
 
+    public static BinaryTreeNode<Integer> constructBST(int[] arr, int s , int e){
+        if(s>e){
+            return null;
+        }
+        int mid = (s+e)/2;
+        BinaryTreeNode<Integer> root = new BinaryTreeNode<>(arr[mid]);
+        root.left = constructBST(arr,s,mid-1);
+        root.right = constructBST(arr,mid+1,e);
+        return root;
+    }
+
     public static void main(String[] args) {
         BinaryTreeNode<Integer> root = new BinaryTreeNode<>(25);
         insert(root, 10);
@@ -141,5 +152,7 @@ public class BST {
         System.out.println(search(root, 40));
         System.out.println(search(root, 100));
         elementsBetweenk1k2O(root, 2, 10);
+        int[] arr = {1,2,3,4,5,6,7};
+        print(constructBST(arr,0,6));
     }
 }
