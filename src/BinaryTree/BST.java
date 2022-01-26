@@ -115,6 +115,18 @@ public class BST {
         return output;
     }
 
+    public static boolean isBST3(BinaryTreeNode<Integer> root ,int min ,int max){
+        if(root == null){
+            return true;
+        }
+        if(root.data < min || root.data > max){
+            return false;
+        }
+        boolean isLeftOk = isBST3(root.left , min,root.data-1);
+        boolean isRightOk = isBST3(root.right , root.data,max);
+        return isLeftOk && isRightOk;
+    }
+
     public static void main(String[] args) {
         BinaryTreeNode<Integer> root = new BinaryTreeNode<>(25);
         insert(root, 10);
