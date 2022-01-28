@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import LinkedList.Node;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -195,6 +197,25 @@ public class BST {
         }
     }
 
+    public static Node bstToLL(BinaryTreeNode<Integer> root){
+        if(root == null){
+            return null;
+        }
+        Node node = new Node(root.data);
+        Node left = bstToLL(root.left);
+        if(left == null){
+            left = node;
+        }
+        Node temp = left;
+        while(temp.next != null){
+            temp = temp.next;
+        }
+        temp.next= node;
+        Node right = bstToLL(root.right);
+        node.next = right;
+        return left;
+    }
+
     public static void main(String[] args) {
         BinaryTreeNode<Integer> root = new BinaryTreeNode<>(25);
         insert(root, 10);
@@ -211,5 +232,10 @@ public class BST {
         elementsBetweenk1k2O(root, 2, 10);
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
         print(constructBST(arr, 0, 6));
+        Node head = bstToLL(root);
+        while(head != null){
+            System.out.println(head.data);
+            head = head.next;
+        }
     }
 }
