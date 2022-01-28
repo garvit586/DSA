@@ -161,6 +161,40 @@ public class BST {
         }
     }
 
+    public static BinaryTreeNode<Integer> deleteNode(BinaryTreeNode<Integer> root , int data){
+        if(root == null){
+            return null;
+        }
+        if(data < root.data){
+            root.left = deleteNode(root.left,data);
+            return root;
+        }
+        else if(data > root.data){
+            root.right = deleteNode(root.right,data);
+            return root;
+        }
+        else{
+            if(root.left == null && root.right == null){
+                return null;
+            }
+            else if(root.left == null){
+                return root.right;
+            }
+            else if(root.right == null){
+                return root.left;
+            }
+            else{
+                BinaryTreeNode<Integer> minNode = root.right;
+                while(minNode.left!=null){
+                    minNode = minNode.left;
+                }
+                root.data = minNode.data;
+                root.right = deleteNode(root.right,minNode.data);
+                return root;
+            }
+        }
+    }
+
     public static void main(String[] args) {
         BinaryTreeNode<Integer> root = new BinaryTreeNode<>(25);
         insert(root, 10);
