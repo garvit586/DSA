@@ -1,4 +1,5 @@
 package HashMap;
 
-public class MapNode {
+public class MapNode<K ,V> {
+
 }
