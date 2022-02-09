@@ -1,5 +1,7 @@
 package HashMap;
 
 public class MapNode<K ,V> {
-
+    K key;
+    V value;
+    MapNode<K, V> next;
 }
