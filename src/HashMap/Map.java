@@ -14,4 +14,9 @@ public class Map<K, V> {
             buckets.add(null);
         }
     }
+
+    private int getBucketIndex(K key){
+        int hashCode = key.hashCode();
+        return hashCode % numBuckets;
+    }
 }
