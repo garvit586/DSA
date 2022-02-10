@@ -20,6 +20,10 @@ public class Map<K, V> {
         return hashCode % numBuckets;
     }
 
+    public int size(){
+        return size;
+    }
+
     public void insert(K key, V value){
         int bucketIndex = getBucketIndex(key);
         MapNode<K ,V> head = buckets.get(bucketIndex);
