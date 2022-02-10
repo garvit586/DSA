@@ -7,5 +7,9 @@ public class MapUse {
             map.insert("abc" + i, i+1);
             System.out.println("i =" + i + "lf = " + map.loadFactor());
         }
+
+        for (int i = 0; i < 20; i++) {
+            System.out.println("abc" + i + ":" + map.getValue("abc" + i));
+        }
     }
 }
