@@ -19,4 +19,19 @@ public class Map<K, V> {
         int hashCode = key.hashCode();
         return hashCode % numBuckets;
     }
+
+    public void insert(K key, V value){
+        int bucketIndex = getBucketIndex(key);
+        MapNode<K ,V> head = buckets.get(bucketIndex);
+        while(head != null){
+            if(head.key.equals(key)){
+                head.value = value;
+            }
+            head = head.next;
+        }
+        head = buckets.get(bucketIndex);
+        MapNode<K, V> newNode = new MapNode<>(key, value);
+        newNode.next = head;
+        buckets.set(bucketIndex,newNode);
+    }
 }
