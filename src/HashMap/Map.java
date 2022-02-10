@@ -56,7 +56,7 @@ public class Map<K, V> {
         return null;
     }
 
-    public void rehash() {
+    private void rehash() {
         System.out.println("Rehashing: buckets" + numBuckets + "size" + size);
         ArrayList<MapNode<K,V>> temp = buckets;
         buckets = new ArrayList<>();
