@@ -26,6 +26,7 @@ public class Map<K, V> {
         while(head != null){
             if(head.key.equals(key)){
                 head.value = value;
+                return;
             }
             head = head.next;
         }
