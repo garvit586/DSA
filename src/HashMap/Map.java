@@ -30,6 +30,7 @@ public class Map<K, V> {
         MapNode<K, V> prev = null;
         while (head != null) {
             if (head.key.equals(key)) {
+                size--;
                 if (prev == null) {
                     buckets.set(bucketIndex, head.next);
                 } else {
@@ -67,7 +68,12 @@ public class Map<K, V> {
         }
         head = buckets.get(bucketIndex);
         MapNode<K, V> newNode = new MapNode<>(key, value);
+        size++;
         newNode.next = head;
         buckets.set(bucketIndex, newNode);
+        double loadFactor = (1.0*size)/numBuckets;
+        if(loadFactor > 0.7){
+            rehash();
+        }
     }
 }
