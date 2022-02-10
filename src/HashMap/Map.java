@@ -24,6 +24,25 @@ public class Map<K, V> {
         return size;
     }
 
+    public V removeKey(K key){
+        int bucketIndex = getBucketIndex(key);
+        MapNode<K ,V> head = buckets.get(bucketIndex);
+        MapNode<K ,V> prev = null;
+        while(head != null){
+            if(head.key.equals(key)) {
+                if (prev == null) {
+                    buckets.set(bucketIndex, head.next);
+                } else {
+                    prev.next = head.next;
+                }
+                return head.value;
+            }
+            prev = head;
+            head = head.next;
+        }
+        return null;
+    }
+
     public V getValue(K key){
         int bucketIndex = getBucketIndex(key);
         MapNode<K ,V> head = buckets.get(bucketIndex);
