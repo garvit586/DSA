@@ -56,6 +56,10 @@ public class Map<K, V> {
         return null;
     }
 
+    public double loadFactor(){
+        return (1.0*size)/numBuckets;
+    }
+
     private void rehash() {
         System.out.println("Rehashing: buckets" + numBuckets + "size" + size);
         ArrayList<MapNode<K,V>> temp = buckets;
